@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama Imelda's Kitchen</title>
+    <link rel="icon" type="image/png" href="Pics/logologo.png">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- Header with Logo and Navigation Tabs -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" id="logo-link">
+                <img src="Pics/logo-removebg-preview.png" alt="Mama Imelda's Kitchen Logo">
+            </a>
+        </div>
+        <nav class="nav-container">
+            <div class="nav-tabs">
+                <a href="#" id="products-link">
+                    <img src="Pics/shopping_bag-removebg-preview.png" alt="Products Icon"> Products
+                </a>
+                <a href="#" id="location-link">
+                    <img src="Pics/location-removebg-preview.png" alt="Location Icon"> Location
+                </a>
+                <a href="#" id="news-link">
+                    <img src="Pics/eye-removebg-preview.png" alt="News Icon"> News
+                </a>
+                <a href="#" id="about-us-link">
+                    <img src="Pics/person-removebg-preview.png" alt="About Us Icon"> About Us
+                </a>
+            </div>
+
+            <!-- Search Bar with Dropdown -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <img src="Pics/magnifying.png" alt="Search Icon" class="search-icon">
+                    <input type="text" placeholder="Search" id="search-input" onfocus="showDropdown()" onblur="hideDropdown()">
+                </div>
+                <div id="dropdown" class="dropdown">
+                    <a href="#tokneneng" class="dropdown-item">Tokneneng</a>
+                    <a href="#fishball" class="dropdown-item">Fishball</a>
+                    <a href="#chickenball" class="dropdown-item">Chickenball</a>
+                    <a href="#squidball" class="dropdown-item">Squidball</a>
+                    <a href="#siomai" class="dropdown-item">Siomai</a>
+                    <a href="#turon" class="dropdown-item">Turon</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="head1">
+        <h1>Announcements</h1>
+    </div>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <div class="slides-wrapper">
+            <img src="Pics/s3.PNG" class="slideshow-image" alt="Slideshow Image 3 (Clone)">
+            <img src="Pics/s1.PNG" class="slideshow-image" alt="Slideshow Image 1">
+            <img src="Pics/S2.PNG" class="slideshow-image" alt="Slideshow Image 2">
+            <img src="Pics/s3.PNG" class="slideshow-image" alt="Slideshow Image 3">
+            <img src="Pics/s1.PNG" class="slideshow-image" alt="Slideshow Image 1 (Clone)">
+        </div>
+    
+        <!-- Left and right arrows -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <div id="head2">
+        <h1>Products</h1>
+    </div>
+
+    <!-- Products Section -->
+    <section id="selection-products">
+        <div class="product-section">
+            <div class="product-item left">
+                <div class="image-container">
+                    <img src="Pics/tokneneng.jpg" alt="Product Image">
+                    <div class="orange-background"></div>
+                </div>
+                <div class="product-info">
+                    <h2 id="tokneneng">TOKNENENG</h2>
+                    <p>We've elevated the classic Filipino street food <em>tokneneng</em> into a signature delicacy. We start with carefully selected quail eggs, which we coat in our own specially crafted batter, infused with just the right blend of flour, annatto, and aromatic spices. Each egg is fried to golden perfection, offering a crispy exterior that contrasts beautifully with the soft, tender center. Our secret? A vibrant orange batter that not only adds color but layers of flavor. Paired with our house-made vinegar dipping sauce, enriched with garlic and chili, this creation is a small but unforgettable taste of tradition, reimagined for the modern palate.</p>
+                </div>
+            </div>
+
+            <div class="product-item right">
+                <div class="product-info">
+                    <h2 id="fishball">FISHBALL</h2>
+                    <p id="fishballDetails">Our premium fishball is fished freshly, locally, and meticously chosen at the local palengke. Each Flat disc of balls are fried to perfection by the golden oil from the foreheads of the makers. Served with only the finest soy sauce of the Chinese and chili garlic from the Russians. When eaten, will give you the best taste you've had in your entire life.</p>
+                </div>
+                <div class="image-container">
+                    <img src="Pics/fishball-pic.png" alt="Product Image">
+                    <div class="orange-background"></div>
+                </div>
+            </div>
+
+            <div class="product-item left">
+                <div class="image-container">
+                    <img src="Pics/chickenball-pic.png" alt="Product Image">
+                    <div class="orange-background"></div>
+                </div>
+                <div class="product-info">
+                    <h2 id="chickenball">CHICKENBALL</h2>
+                    <p>Introducing our exquisite Chicken Balls—tender morsels of premium chicken, expertly seasoned and crafted into delightful bites. Each ball is fried to golden perfection, creating a crispy exterior that gives way to a juicy, flavorful center. Paired with a luscious dipping sauce that harmonizes the richness of the chicken with zesty notes, these chicken balls offer a sophisticated twist on a beloved classic, making every bite an irresistible treat for the senses. Perfect for sharing—or not!</p>
+                </div>
+            </div>
+
+            <div class="product-item right">
+                <div class="product-info">
+                    <h2 id="squidball">SQUIDBALL</h2>
+                    <p>Indulge in the delightful experience of our squid balls, a culinary masterpiece that captures the essence of the ocean in every bite. Expertly crafted from the freshest squid, each ball is blended with a harmonious mix of savory seasonings and aromatic herbs, creating a taste sensation that is both delicate and bold. The squid is finely minced and combined with a touch of garlic, ginger, and hints of citrus, infusing the mixture with a burst of flavor that dances on your palate. Lightly battered and expertly fried to achieve a perfect golden-brown crisp, our squid balls offer an enticing crunch that gives way to a tender, juicy interior. Served with an array of delectable dipping sauces, such as a tangy soy-vinegar blend or a creamy wasabi mayo, these squid balls are not just a snack; they are an adventure for the senses, perfect for sharing at gatherings or enjoying as a satisfying treat any time of day.</p>
+                </div>
+                <div class="image-container">
+                    <img src="Pics/squidball-pic.png" alt="Product Image">
+                    <div class="orange-background"></div>
+                </div>
+            </div>
+
+            <div class="product-item left">
+                <div class="image-container">
+                    <img src="Pics/siomai-pic.png" alt="Product Image">
+                    <div class="orange-background"></div>
+                </div>
+                <div class="product-info">
+                    <h2 id="siomai">SIOMAI</h2>
+                    <p>Take a bite out of our Siomai! I promise you that there are no cats in this, that happens if you buy our premium siomai. Joke lang haha. Steamed to perfection and picked to perfection, and also eaten to perfection. When you mix our sauces with the siomai, some say it's the best moment of their life, and those people were married, had a child, and had a 70 on discrete mathematics.</p>
+                </div>
+            </div>
+
+            <div class="product-item right">
+                <div class="product-info">
+                    <h2 id="turon">TURON</h2>
+                    <p>Sink your teeth into our heavenly Turon—a delightful treat that redefines sweetness! Each golden, crispy roll is lovingly wrapped around ripe bananas and a sprinkle of caramelized brown sugar, then fried to a perfect crunch. With every bite, you’ll experience the satisfying crackle of the exterior giving way to the warm, gooey interior that makes your taste buds dance with joy. Whether enjoyed as a snack or dessert, this classic Filipino favorite is so good that you might find yourself dreaming of it long after the last bite. Trust us, once you’ve tasted our Turon, ordinary desserts will seem like a distant memory!</p>
+                </div>
+                <div class="image-container">
+                    <img src="Pics/turon-pic.png" alt="Product Image">
+                    <div class="orange-background"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rounded-button-container">
+            <a href="products.html" class="rounded-button" id="button1">See all Products</a> <!-- Changed button to anchor -->
+        </div>
+    </section>
+
+    <div id="head3">
+        <h1>Location</h1>
+    </div>
+    <section id="selection-location">
+        <h2 style="text-align: center; color: #ff6600; font-size: 34px;">Come find us!</h2>
+        <div class="map-container">
+            <div class="map-background"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.3596920864252!2d120.59522274740272!3d16.42824541097679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a3941196160f%3A0xa9f98dce75a868d7!2sMama%20Imelda's%20Kitchen!5e0!3m2!1sen!2sph!4v1729594726115!5m2!1sen!2sph" 
+                width="1000" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Button to Open Google Maps -->
+        <div style="text-align: center; margin-top: 10px;">
+            <a href="https://maps.app.goo.gl/arnMLgCoqfdQC7tF8" class="maps-button">
+                Open in Google Maps
+            </a>
+        </div>
+    </section>
+
+    <div id="head4">
+        <h1>News</h1>
+    </div>
+
+    <section id="selection-news">
+        <h2 style="color: white;">Latest News</h2> <!-- Added heading -->
+        <div class="container">
+            <div class="box">
+                <img src="Pics/image1.PNG" alt="Image 1">
+                <div class="overlay"></div> <!-- Darkening overlay -->
+                <div class="content">
+                    <h2>New Branch</h2>
+                </div>
+                <div class="hidden">
+                    <p>We're excited to announce that we have a new branch opening soon!</p>
+                </div>
+            </div>
+            <div class="box box-secondary">
+                <img src="Pics/image2.PNG" alt="Image 2">
+                <div class="overlay"></div> <!-- Darkening overlay -->
+                <div class="content">
+                    <h2>Streamer Visits</h2>
+                </div>
+                <div class="hidden">
+                    <p>Famous streamer says this is the best moment of his life, after biting into our chickenballs</p>
+                </div>
+            </div>
+            <div class="box box-tertiary">
+                <img src="Pics/image3.PNG" alt="Image 3">
+                <div class="overlay"></div> <!-- Darkening overlay -->
+                <div class="content">
+                    <h2>Buy One, Get Him</h2>
+                </div>
+                <div class="hidden">
+                    <p>We are holding a raffle for every purchase you will get the chance to win a good boy named Max!</p>
+                </div>
+            </div>
+        </div>
+        <div class="rounded-button-container">
+            <a href="news.html" class="rounded-button" style="margin-left: 15px;">See all News</a> <!-- Changed button to anchor -->
+        </div>
+    </section>
+    <div id="head5">
+        <h1  >About Us</h1>
+    </div>
+    
+    <section>
+        <div class="text-image-container">
+            <div class="text-block">
+                <div class="header-background">
+                    <h2>Introducing Mama Imelda and Jasper</h2>
+                </div>
+                <p>
+                    Welcome to Mama Imelda's Kitchen, where tradition meets taste! My name is Jasper, and I proudly assist in promoting our beloved family venture. Our kitchen is a celebration of culinary heritage, lovingly created by my mom, Mama Imelda. With her rich recipes passed down through generations, she brings the authentic flavors of our culture to life, ensuring every dish tells a story.
+                </p>
+    <p>At Mama Imelda's Kitchen, our mission is to provide a warm and welcoming dining experience that feels like home. We strive to serve delicious, quality meals using fresh, locally sourced ingredients. My mom’s passion for cooking inspires us to maintain high standards while embracing the spirit of family and community. We believe that food is not just about sustenance but a way to connect people and create lasting memories.
+    </p>
+    <p>Together, our vision is to expand Mama Imelda's Kitchen into a beloved dining destination where everyone can gather to enjoy hearty meals and cherished moments. As I focus on advertising and reaching out to our community, we hope to share our culinary delights and the love behind each dish, inviting you to experience the warmth of our kitchen firsthand.
+                </p>
+            </div>
+            <div class="new-image-container">
+                <div class="image-shadow"></div> <!-- Shadow behind the image -->
+                <img src="Pics/image6.PNG" alt="Descriptive Alt Text">
+            </div>  
+        </div>
+    </section>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p>Email: mamaimeldakitchen@gmail.com</p>
+            <p>Phone: +63 912 345 6789</p>
+            <p>Address: Mama Imelda's Kitchen, Baguio City, Philippines</p>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/imelda.benitezcorsal" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/corusaru/" target="_blank">Instagram</a>
+        </div>
+        <div class="footer-column">
+            <h3>Opening Hours</h3>
+            <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+            <p>Sat - Sun: 9:00 AM - 5:00 PM</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Mama Imelda's Kitchen. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="JS/script.js"></script> <!-- JavaScript File for Interactivity -->
+</body>
+</html>

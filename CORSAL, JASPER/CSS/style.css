@@ -1,0 +1,634 @@
+html {
+    scroll-behavior: smooth;
+}
+/* General Styling */
+body {
+    font-family: 'Playfair Display';
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: flex-end; /* Center items horizontally */
+    padding: 10px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keep the header above other content */
+}
+
+/* Logo Styling */
+.logo img {
+    width: 400px; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 25px;
+    transition: filter 0.3s ease;
+}
+.logo a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #ff6600;
+    text-decoration: none;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.logo a:hover{
+    background-color: #ff912a;
+    color: #ff912a;
+}
+.logo a:hover img {
+    filter: brightness(0) invert(1);  /* This will turn the icon white */
+}
+
+/* Navigation Tabs Styling */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+    margin-left: 40px;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-tabs a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #ff6600;
+    text-decoration: none;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs a:hover {
+    background-color: #ff912a;
+    color: #fff;
+}
+
+/* On hover, make the img inside the nav tab white */
+.nav-tabs a:hover img {
+    filter: brightness(0) invert(1);  /* This will turn the icon white */
+}
+
+/* Icon images styling */
+.nav-tabs img {
+    width: 35px;
+    height: 40px;
+    transition: filter 0.3s ease;  /* Smooth transition for the icon color change */
+}
+
+/* Adjusting the width of the News Icon */
+#news-link img {
+    width: 45px; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ff6600;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #fff;
+    width: 550px;
+    margin-top: -5px; /* Move the search bar up slightly */
+}
+
+.search-icon {
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+#search-input::placeholder {
+    color: #ff6600;
+    font-size: 16px;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #ff6600, #ff912a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); 
+    font-size: 100px;
+    margin: 20px 0; 
+    transition: transform 0.3s ease; 
+}
+
+h1:hover {
+    transform: scale(1.1); 
+}
+
+hr {
+    position: sticky;
+    top: 0;
+    height: 3px;
+    background-color: #ffaf80;
+    margin: 0;
+    z-index: 1;
+    color: white;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    width: 80%; /* Adjust this value to make the container smaller */
+    height: 500px; /* Adjust this value to make the container shorter */
+    margin: 20px auto; /* This centers the container and adds some vertical space */
+    overflow: hidden;
+    border-radius: 15px; /* Optional: adds rounded corners to the container */
+    background-color: #fad7c0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+
+
+}
+
+.slides-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slideshow-image {
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px; /* Match the container's border-radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+/* The arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    background-color: transparent;
+    border: 2px solid #ff6600;
+    border-radius: 50%;
+    color: #ff6600;
+    text-align: center;
+    line-height: 40px;
+    font-size: 40px;
+    user-select: none;
+    z-index: 10;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.prev.disabled, .next.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.prev {
+    left: 50px;
+}
+
+.next {
+    right: 50px;
+}
+
+/* Fade animation for slides */
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+#head1, #head2, #head3,  #head4, #head5 {
+
+    position: sticky;
+    top: 150px; /* Adjust this value based on the height of your header */
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    z-index: 500; /* Keep the header above other content */
+}
+
+/* Styling for the product section */
+.product-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    max-width: 1200px; /* Limit the width of the entire section */
+    padding: 0 20px; /* Add padding to prevent content from touching screen edges */
+    margin: 50px auto; /* Center the product section horizontally */
+}
+
+.product-item{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: 100%; /* Ensure that the product item doesn't exceed the section's width */
+}
+.product-item #fishball, #squidball, #turon{
+    margin-left:400px
+}
+
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+}
+
+/* Orange background rectangle for the shadow effect */
+.orange-background {
+    position: absolute;
+    top: 10px; /* Offset to create the shadow effect */
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffb27e;
+    z-index: -1; /* Make sure it's behind the image */
+    border-radius: 15px; /* Optional rounded corners */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Match the rectangle's rounding */
+}
+
+/* Product info styling */
+.product-info {
+    flex: 1;
+    background-color: #ffffff; /* Background color for the header */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.product-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    margin: 0 0 10px 0;
+    color: rgb(255, 117, 25); 
+    background-color: #ffbd91;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block; /* Ensure the rectangle only wraps the text */
+}
+
+.product-info p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ff6600;
+}
+/* Center the map and make it larger and more rectangular */
+.map-container {
+    position: relative;
+    width: 820px; /* Adjust width */
+    margin: 0 auto; /* Center horizontally */
+    left: -50px
+}
+
+/* Background Rectangle for Shadow Effect */
+.map-background {
+    position: absolute;
+    top: 15px; /* Offset to create shadow */
+    left: 15px;
+    width: 1000px; /* Same width as iframe */
+    height: 650px; /* Same height as iframe */
+    background-color: #f8bc94; /* Light gray shadow color */
+    border-radius: 20px; /* Rounded corners */
+    z-index: -1; /* Behind the iframe */
+}
+
+/* Button Styling */
+.maps-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff9853;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add smooth transition */
+}
+
+.maps-button:hover {
+    background-color: #ff7b00; /* Darker orange on hover */
+    transform: scale(1.1); /* Slight scaling on hover */
+}
+
+#selection-news{
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    gap: 20px; /* Space between boxes */
+}
+
+.box {
+    position: relative;
+    flex: 1; /* Allow boxes to grow */
+    background-color: #ffb686; /* Default color */
+    border-radius: 15px;
+    padding: 20px;
+    transition: flex-grow 0.3s ease; /* Transition for growth */
+    overflow: hidden; /* Hide overflow for smooth effect */
+    min-height: 350px; /* Minimum height for taller boxes */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align content vertically */
+    align-items: center; /* Center align content */
+    justify-content: center; /* Center content */
+}
+
+.box.box-secondary {
+    background-color: #ff9271; /* Different color for secondary boxes */
+}
+
+.box:hover {
+    flex-grow: 1.5; /* Grow on hover */
+}
+
+.content {
+    z-index: 2; /* Above hidden content */
+    position: relative;
+    transition: opacity 0.5s ease; /* Fade effect for content */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Align content vertically */
+    align-items: center; /* Center align content */
+}
+
+.box h2 {
+    font-size: 30px;
+    font-family: 'Playfair Display', serif; /* Apply Playfair Display to h2 */
+    font-weight: bold; /* Ensure it's bold */
+    color: #ff7b00; /* Text color */
+    text-shadow: 
+        1px 1px 0 #ffefcb,   /* White outline */
+        -1px -1px 0 #ffefcb, 
+        1px -1px 0 #ffefcb, 
+        -1px 1px 0 #ffefcb; 
+    background-color: #fde0c6;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 85%;
+}
+
+.box img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Maintain aspect ratio while covering */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 0; /* Place behind the content */
+}
+
+/* New overlay for darkening effect */
+.overlay {
+    position: absolute; /* Position it absolutely to cover the entire box */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for darkening */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Transition for the overlay */
+    z-index: 1; /* Position it behind the content */
+}
+.content, .hidden {
+    z-index: 2; /* Ensure content is above the overlay */
+    position: relative; /* Ensure relative positioning for z-index to work */
+}
+.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade effect for hidden content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hidden p {
+    font-size: large;
+    font-family: 'Playfair Display', serif;
+    color: #ffeee6;
+    text-shadow: 
+        1px 1px 0 #964800,   /* White outline */
+        -1px -1px 0 #964800, 
+        1px -1px 0 #964800, 
+        -1px 1px 0 #964800; 
+    font-weight: bold; /* Ensure it's bold */
+    text-align: left;
+    text-indent: 30px;
+    padding: 15px;
+}
+
+.box:hover .content {
+    opacity: 0; /* Fade out text */
+}
+
+.box:hover .hidden {
+    opacity: 1; /* Fade in hidden content */
+}
+
+.box:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+.text-image-container {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align items vertically */
+    gap: 20px; /* Space between text and image */
+    margin-top: 40px; /* Space above the section */
+}
+
+.text-block {
+    flex: 1; /* Allow text block to take available space */
+    font-family: 'Playfair Display', serif; /* Use Playfair Display font */
+    color: #ff7300; /* Text color */
+    font-size: 18px; /* Font size for text */
+
+}
+.text-block h2{
+margin-left: 20px;
+background-color: coral;
+margin: 0; /* Remove default margin */
+color: #fff; /* Change text color for better contrast */
+}
+.text-block p{
+    margin-right: 30px;
+    text-align: justify;
+    text-indent: 20px;
+    margin-left: 20px;
+}
+.new-image-container {
+    position: relative; /* For absolute positioning of the shadow */
+    flex: 1; /* Allow image container to take available space */
+}
+
+.new-image-container img {
+    height: auto;
+    width: 100%; /* Full width of the container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(255, 165, 0, 0.7); /* Orange shadow */
+}
+
+.image-shadow {
+    position: absolute; /* Position the shadow absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px; /* Match the rounded corners */
+    background-color: rgba(255, 123, 0, 0.658); /* Semi-transparent orange shadow */
+    z-index: -1; /* Behind the image */
+}
+.header-background {
+    margin-left: 20px; /* Align with the text */
+    background-color: coral; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Add some padding to the background */
+    display: inline-block; /* Ensure it wraps the h2 properly */
+}
+.highlight {
+    color: red;
+    font-weight: bold; /* Optional: Make it bold */
+}
+
+
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+#search-input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px; /* Adjust based on your layout */
+    z-index: 1;
+}
+
+.dropdown-item {
+    padding: 8px 10px;
+    cursor: default;
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Default text color */
+}
+
+.dropdown-item:hover {
+    background-color: #e9e9e9; /* Change background on hover */
+}
+
+footer {
+    background-color: #743800;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ffcc8a;
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+}
+.rounded-button {
+    background-color: #FFA500; /* Orange background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.rounded-button-container{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+#button1{
+   margin-top: -100px; /* Ensure no default margins */
+}
+.rounded-button:hover {
+    background-color: #ff8c00; /* Darker orange on hover */
+}
